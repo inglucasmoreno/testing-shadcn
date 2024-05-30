@@ -20,7 +20,7 @@ export default function Page() {
   const [dialogOpen, setDialogOpen] = useState(false)
 
   return (
-    <div>
+    <div className="grid grid-cols-2 gap-4">
       <AlertDialog
         open={dialogOpen}
         // onOpenChange={(open) => console.log({ open })}
@@ -30,6 +30,7 @@ export default function Page() {
           <Button variant="default"> Disparar alerta </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
+        
           <AlertDialogHeader>
             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
             <AlertDialogDescription>
@@ -37,12 +38,14 @@ export default function Page() {
               and remove your data from our servers.
             </AlertDialogDescription>
           </AlertDialogHeader>
+          
           <AlertDialogFooter>
             <AlertDialogCancel onClick={() => console.log("Cancel")}>Cancel</AlertDialogCancel>
             <AlertDialogAction onClick={() => console.log("Continue")}>Continue</AlertDialogAction>
           </AlertDialogFooter>
+        
         </AlertDialogContent>
-        <Button onClick={() => setDialogOpen(true)}>Open Dialog</Button>
+        <Button onClick={() => setDialogOpen(true)}>Open Dialog Manually</Button>
       </AlertDialog>
     </div>
   )
